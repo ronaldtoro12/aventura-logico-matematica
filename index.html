@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aventura Lógico-Matemática</title>
+    <link rel="stylesheet" href="styles.css?v=visual-3" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Aventura lógico-matemática">
+          <span class="brand-mark">🧩</span>
+          <span>Aventura <b>Matemática</b></span>
+        </a>
+        <nav class="nav" aria-label="Navegación principal">
+          <button class="nav-item active" type="button" data-section="inicio"><span>🏠</span> Inicio</button>
+          <button class="nav-item" type="button" data-section="aventura"><span>🗺️</span> Aventura</button>
+          <button class="nav-item" type="button" data-section="progreso"><span>⭐</span> Progreso</button>
+        </nav>
+        <div class="sidebar-card">
+          <span class="eyebrow">ESTRELLAS</span>
+          <strong><span id="sidebarStars">0</span> ⭐</strong>
+          <p id="sidebarStatus">¡Comienza tu aventura!</p>
+        </div>
+        <button id="resetDataBtn" class="reset-button" type="button">↻ Reiniciar juego</button>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div><p class="greeting">Tu próxima aventura comienza aquí</p><h1>¡Hola, explorador!</h1></div>
+          <div class="topbar-actions"><button id="voiceToggle" class="voice-toggle" type="button" aria-pressed="true" title="Silenciar narración"><span>🔊</span><span class="voice-label">Voz activa</span></button><div class="player-pill"><div class="avatar">A</div><div><strong id="studentName">Explorador/a</strong><span id="topLevel">Mundo 1</span></div></div></div>
+        </header>
+
+        <section id="inicio" class="view active-view">
+          <article class="hero-banner">
+            <div class="hero-copy">
+              <span class="hero-tag">6 MUNDOS · 18 RETOS</span>
+              <h2>¡Tu aventura<br /><em>te espera!</em></h2>
+              <p>Ayuda a nuestros personajes, supera retos y gana estrellas mientras descubres las matemáticas.</p>
+              <button id="continueBtn" class="primary-button" type="button">¡Jugar ahora! <span>→</span></button>
+            </div>
+            <div class="hero-illustration" aria-hidden="true">
+              <div class="planet planet-one"></div><div class="planet planet-two"></div>
+              <div class="book"><span>1</span><span>+</span><span>2</span></div>
+              <div class="pencil"></div><div class="shapes"><i>▲</i><i>●</i><i>■</i></div>
+            </div>
+          </article>
+
+          <section class="section-block">
+            <div class="section-heading"><div><span class="eyebrow">TU CAMINO</span><h2>Áreas de aprendizaje</h2></div><button class="text-button" type="button" data-section="aventura">Ver misiones <span>→</span></button></div>
+            <div id="missionPreview" class="mission-grid"></div>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="card progress-card">
+              <div class="card-heading"><h3>Mi progreso</h3><span id="progressPercent">0%</span></div>
+              <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+              <div class="progress-stats"><div><strong id="completedCount">0</strong><span>Misiones</span></div><div><strong id="starCount">0</strong><span>Estrellas</span></div><div><strong id="currentLevel">1</strong><span>Actual</span></div></div>
+            </article>
+
+            <article class="card name-card">
+              <div class="card-heading"><h3>Datos del jugador</h3></div>
+              <form id="playerForm" class="name-form">
+                <label>Nombre
+                  <input id="playerNameInput" type="text" placeholder="Escribe tu nombre" maxlength="30" />
+                </label>
+                <button class="primary-button" type="submit">Guardar</button>
+              </form>
+            </article>
+          </section>
+        </section>
+
+        <section id="aventura" class="view">
+          <div class="page-heading"><div><span class="eyebrow">MAPA DE APRENDIZAJE</span><h1>Los seis mundos</h1></div><p id="missionSummary">Completa cada desafío para descubrir el siguiente mundo.</p></div>
+          <div id="missionGrid" class="missions-full-grid"></div>
+
+          <article id="gamePanel" class="game-panel hidden">
+            <div class="game-header">
+              <button id="closeGameBtn" class="close-button" type="button">← Misiones</button>
+              <span id="gameCategory" class="game-category"></span>
+              <strong id="gameStars">☆☆☆</strong>
+            </div>
+            <div class="game-body">
+              <p id="gameInstruction" class="game-instruction"></p>
+              <div id="gameContent" class="game-content"></div>
+              <div id="gameFeedback" class="game-feedback" aria-live="polite"></div>
+              <button id="nextMissionBtn" class="primary-button hidden" type="button">Siguiente misión →</button>
+            </div>
+          </article>
+        </section>
+
+        <section id="progreso" class="view">
+          <div class="page-heading"><div><span class="eyebrow">HALL OF FAME</span><h1>Tu progreso</h1></div></div>
+          <section class="progress-layout">
+            <article class="card achievement-card"><div class="big-badge">🏅</div><h2 id="achievementTitle">Explorador curioso</h2><p id="achievementText">Todavía puedes descubrir muchas nociones matemáticas.</p></article>
+            <article class="card timeline-card"><h3>Misiones completadas</h3><div id="completionTimeline" class="timeline"></div></article>
+          </section>
+        </section>
+
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
