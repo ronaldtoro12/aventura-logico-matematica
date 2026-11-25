@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" role="img" aria-labelledby="pear-title">
+  <title id="pear-title">Pera sonriente</title>
+  <defs>
+    <linearGradient id="pear" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#d7f44a"/>
+      <stop offset=".58" stop-color="#9bcf30"/>
+      <stop offset="1" stop-color="#5e9f27"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 26c-2-9-1-17 4-23" fill="none" stroke="#805239" stroke-width="6"/>
+    <path d="M53 12C66-1 83 2 92 8 83 23 68 27 53 19" fill="#4a9f38" stroke="#2e6e31" stroke-width="3"/>
+    <path d="M49 24c-7 13-7 18-17 29-12 13-20 27-16 40 4 14 18 19 34 19s30-5 34-19c4-13-4-27-16-40-10-11-10-16-17-29-1-2-2-2-2 0Z" fill="url(#pear)" stroke="#315d27" stroke-width="4"/>
+    <path d="M29 63c-7 10-10 20-7 29" fill="none" stroke="#efff88" stroke-width="6" opacity=".9"/>
+    <ellipse cx="39" cy="68" rx="4.2" ry="5.8" fill="#392f25"/>
+    <ellipse cx="62" cy="68" rx="4.2" ry="5.8" fill="#392f25"/>
+    <circle cx="40.5" cy="66" r="1.5" fill="#fff" stroke="none"/>
+    <circle cx="63.5" cy="66" r="1.5" fill="#fff" stroke="none"/>
+    <ellipse cx="29" cy="78" rx="5.8" ry="3.4" fill="#f58e78" opacity=".8" stroke="none"/>
+    <ellipse cx="72" cy="78" rx="5.8" ry="3.4" fill="#f58e78" opacity=".8" stroke="none"/>
+    <path d="M43 79c4 6 10 6 14 0" fill="none" stroke="#315d27" stroke-width="3"/>
+    <path d="M65 43c7 6 12 13 14 21" fill="none" stroke="#efff88" stroke-width="4" opacity=".65"/>
+  </g>
+</svg>
