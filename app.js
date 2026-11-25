@@ -83,7 +83,7 @@ function drawChallengeProps(ctx,width,height,time){
   }
   ctx.restore();
 }
-function drawCarrot(ctx,x,bottom,scale=1,collected=false){ctx.save();ctx.translate(x,bottom);ctx.scale(scale,scale);ctx.fillStyle="#ff9348";ctx.beginPath();ctx.moveTo(-11,-37);ctx.lineTo(11,-37);ctx.lineTo(0,0);ctx.closePath();ctx.fill();ctx.strokeStyle="#ea7938";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-5,-28);ctx.lineTo(3,-26);ctx.moveTo(-3,-18);ctx.lineTo(4,-16);ctx.stroke();ctx.fillStyle="#55a875";ctx.beginPath();ctx.ellipse(-5,-42,4,10,-.5,0,Math.PI*2);ctx.ellipse(4,-44,4,11,.5,0,Math.PI*2);ctx.fill();if(collected){ctx.strokeStyle="#3a956d";ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,-18,20,0,Math.PI*2);ctx.stroke();}ctx.restore();}
+function drawCarrot(ctx,x,bottom,scale=1,collected=false){ctx.save();if(carrotSprite.complete&&carrotSprite.naturalWidth){ctx.drawImage(carrotSprite,x-24*scale,bottom-68*scale,48*scale,68*scale);}else{ctx.translate(x,bottom);ctx.scale(scale,scale);ctx.fillStyle="#ff9348";ctx.beginPath();ctx.moveTo(-11,-37);ctx.lineTo(11,-37);ctx.lineTo(0,0);ctx.closePath();ctx.fill();ctx.strokeStyle="#ea7938";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-5,-28);ctx.lineTo(3,-26);ctx.moveTo(-3,-18);ctx.lineTo(4,-16);ctx.stroke();ctx.fillStyle="#55a875";ctx.beginPath();ctx.ellipse(-5,-42,4,10,-.5,0,Math.PI*2);ctx.ellipse(4,-44,4,11,.5,0,Math.PI*2);ctx.fill();}if(collected){ctx.strokeStyle="#3a956d";ctx.lineWidth=3;ctx.beginPath();ctx.ellipse(x,bottom-34*scale,24*scale,32*scale,0,0,Math.PI*2);ctx.stroke();}ctx.restore();}
 function drawApple(ctx,x,y,scale=1){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);ctx.fillStyle="#ed6861";ctx.beginPath();ctx.arc(-7,1,13,0,Math.PI*2);ctx.arc(7,1,13,0,Math.PI*2);ctx.lineTo(0,20);ctx.closePath();ctx.fill();ctx.strokeStyle="#704d40";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,-11);ctx.lineTo(2,-19);ctx.stroke();ctx.fillStyle="#5aa775";ctx.beginPath();ctx.ellipse(7,-16,7,3,-.4,0,Math.PI*2);ctx.fill();ctx.restore();}
 function drawPear(ctx,x,y,scale=1){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);ctx.fillStyle="#9bc86b";ctx.beginPath();ctx.moveTo(0,-20);ctx.bezierCurveTo(-3,-15,-5,-9,-11,-3);ctx.bezierCurveTo(-23,12,-13,23,0,23);ctx.bezierCurveTo(13,23,23,12,11,-3);ctx.bezierCurveTo(5,-9,3,-15,0,-20);ctx.fill();ctx.strokeStyle="#785b43";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,-18);ctx.lineTo(2,-26);ctx.stroke();ctx.fillStyle="#58a875";ctx.beginPath();ctx.ellipse(8,-23,7,3,-.4,0,Math.PI*2);ctx.fill();ctx.restore();}
 function drawShape(ctx,shape,x,y,size,color){ctx.save();ctx.fillStyle=color;ctx.beginPath();if(shape==="circle")ctx.arc(x,y,size,0,Math.PI*2);else if(shape==="triangle"){ctx.moveTo(x,y-size);ctx.lineTo(x+size,y+size);ctx.lineTo(x-size,y+size);ctx.closePath();}else if(shape==="rectangle")ctx.rect(x-size*1.3,y-size*.65,size*2.6,size*1.3);else ctx.rect(x-size,y-size,size*2,size*2);ctx.fill();ctx.restore();}
@@ -91,6 +91,8 @@ function drawDirection(ctx,arrow,x,y,color,size){ctx.save();ctx.fillStyle=color;
 function drawSceneLabel(){}
 function drawSequence(ctx,items,width,height,color){items.forEach((item,index)=>{const x=width*(.31+index*.145);ctx.fillStyle="rgba(255,255,255,.82)";ctx.beginPath();ctx.roundRect(x-25,height*.42,50,48,12);ctx.fill();ctx.fillStyle=color;ctx.font="bold 26px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(item,x,height*.49);});}
 const STORAGE_KEY = "aventura_numeros_formas_v3";
+const carrotSprite=new Image();
+carrotSprite.src="assets/carrot.svg";
 
 const worlds = [
   {
