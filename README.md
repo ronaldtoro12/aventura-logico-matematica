@@ -4,7 +4,7 @@ Juego educativo interactivo para niños, con seis mundos, retos ilustrados en 2D
 
 ## Jugar
 
-https://ronaldtoro12.github.io/aventura-logico-matematica/
+https://zenitha.github.io/aventura-logico-matematica/
 
 ## Publicación
 
